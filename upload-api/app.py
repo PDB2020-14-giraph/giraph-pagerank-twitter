@@ -1,6 +1,6 @@
 from flask import Flask
 
-UPLOAD_FOLDER = "C:\\Users\Public\\Documents"
+UPLOAD_FOLDER = "D:\Kuliah\PDB\giraph-pagerank-twitter\\upload-api"
 
 app = Flask(__name__)
 app.secret_key = "secret key"

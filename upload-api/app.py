@@ -1,6 +1,6 @@
 from flask import Flask
 
-UPLOAD_FOLDER = "D:\PROYEK\PDB\\upload-api"
+UPLOAD_FOLDER = "C:\\Users\Public\\Documents"
 
 app = Flask(__name__)
 app.secret_key = "secret key"

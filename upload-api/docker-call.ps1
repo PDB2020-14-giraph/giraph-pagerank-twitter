@@ -1,0 +1,1 @@
+docker run --volume D:/Kuliah/PDB/tugas:/myhome --rm --interactive --tty uwsampa/giraph-docker /myhome/calculate-page-rank.sh

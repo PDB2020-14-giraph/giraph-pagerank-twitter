@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, abort, jsonify, send_from_directory
 
 
-UPLOAD_DIRECTORY = "/project/api_uploaded_files"
+UPLOAD_DIRECTORY = "/PDB/upload-api"
 
 if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
@@ -38,7 +38,8 @@ def post_file(filename):
         abort(400, "no subdirectories allowed")
 
     with open(os.path.join(UPLOAD_DIRECTORY, filename), "wb") as fp:
-        fp.write(request.data)
+        print(request.files)
+        fp.write(request.files['files'])
 
     # Return 201 CREATED
     return "", 201

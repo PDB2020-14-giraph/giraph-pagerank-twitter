@@ -16,9 +16,25 @@ def uploads_file():
    
 @app.route('/results')
 def get_results():
+   output_dict = {"id":[], "score":[]}
+   my_list = []
    with open("output-twt.txt", "r") as f: 
-      content = f.read()
-      print(content)
+      for line in f:
+         output_dict = {}
+         stripped_line = line.strip()
+         line_list = stripped_line.split()
+         output_dict['id'] = line_list[0]
+         sub_string = line_list[1]
+         output_dict['score'] = float(sub_string[0:10])
+         my_list.append(output_dict)
+      f.close()
+      sorted_list = sorted(my_list, key = lambda i: i['score'], reverse=True)
+      top_list = []
+      for i in range(20):
+         top_list.append(sorted_list[i])
+      content = top_list
+
+      
       return  render_template("results.html", content=content) 
 		
 if __name__ == '__main__':

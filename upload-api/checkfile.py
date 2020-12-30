@@ -38,13 +38,16 @@ class Handler(FileSystemEventHandler):
         elif event.event_type == 'created':
             if os.path.basename(event.src_path) == 'twt.txt':
             # Event is created, you can process it now 
+                print(event.src_path)
                 print("Watchdog received created event - % s." % os.path.basename(event.src_path))
-                p = subprocess.Popen(["powershell.exe", "-ExecutionPolicy","Unrestricted","-File", "D:\Kuliah\PDB\\tugas\docker-call.ps1"], stdout=sys.stdout)
+                p = subprocess.Popen(["powershell.exe", "-ExecutionPolicy","Unrestricted","-File", "D:\Kuliah\PDB\giraph-pagerank-twitter\\upload-api\docker-call.ps1"], stdout=sys.stdout)
                 p.communicate()
                 print("page rank output has been created!")
         elif event.event_type == 'modified': 
-            # Event is modified, you can process it now 
-            print("Watchdog received modified event - % s." % event.src_path) 
+            if os.path.basename(event.src_path) == 'twt.txt':
+            # Event is created, you can process it now 
+                print(event.src_path)
+                 
               
   
 if __name__ == '__main__': 

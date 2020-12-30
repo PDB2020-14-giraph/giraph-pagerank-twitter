@@ -1,1 +1,1 @@
-docker run --volume D:/Kuliah/PDB/tugas:/myhome --rm --interactive --tty uwsampa/giraph-docker /myhome/calculate-page-rank.sh
+docker run --volume D:/Kuliah/PDB/giraph-pagerank-twitter/upload-api:/myhome --rm --interactive --tty uwsampa/giraph-docker /myhome/calculate-page-rank.sh

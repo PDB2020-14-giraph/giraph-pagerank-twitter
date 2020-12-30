@@ -19,6 +19,6 @@ cp /usr/local/giraph/giraph-examples/target/giraph-examples-1.1.0-SNAPSHOT-for-h
 
 jar uf myjar.jar mypackage
 
-$HADOOP_HOME/bin/hadoop jar myjar.jar org.apache.giraph.GiraphRunner mypackage.PageRank --yarnjars myjar.jar --workers 2 --vertexInputFormat org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat --vertexInputPath /user/root/input/twt.txt -vertexOutputFormat org.apache.giraph.io.formats.IdWithValueTextOutputFormat --outputPath /user/root/output-twt
+$HADOOP_HOME/bin/hadoop jar myjar.jar org.apache.giraph.GiraphRunner mypackage.PageRank --yarnjars myjar.jar --workers 3 --vertexInputFormat org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat --vertexInputPath /user/root/input/twt.txt -vertexOutputFormat org.apache.giraph.io.formats.IdWithValueTextOutputFormat --outputPath /user/root/output-twt
 
 $HADOOP_HOME/bin/hdfs dfs -get /user/root/output-twt/part-m-00001 /myhome/output-twt.txt
